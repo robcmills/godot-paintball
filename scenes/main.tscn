@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://becm5fjkeps2o"]
+
+[ext_resource type="PackedScene" uid="uid://cepra2yx05tcy" path="res://scenes/office.tscn" id="1_kwcg8"]
+[ext_resource type="PackedScene" uid="uid://bmidjng61313x" path="res://scenes/player.tscn" id="2_8wugb"]
+[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="3_xhttu"]
+[ext_resource type="PackedScene" uid="uid://csfyirg0olumb" path="res://scenes/hero_player.tscn" id="4_aqb2k"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Office" parent="." instance=ExtResource("1_kwcg8")]
+
+[node name="LimePlayer" parent="." instance=ExtResource("2_8wugb")]
+position = Vector2(55, 96)
+
+[node name="Camera2D" type="Camera2D" parent="LimePlayer"]
+zoom = Vector2(5, 5)
+
+[node name="HippoPlayer" parent="." instance=ExtResource("3_xhttu")]
+position = Vector2(87, 118)
+
+[node name="HeroPlayer" parent="." instance=ExtResource("4_aqb2k")]
+position = Vector2(120, 117)
