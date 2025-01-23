@@ -17,27 +17,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oyich")
 
+[node name="Astronaut" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(231, 446)
+scale = Vector2(8, 8)
+characterPreset = 0
+
+[node name="Chef" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(433, 446)
+scale = Vector2(8, 8)
+animation = 3
+characterPreset = 1
+
+[node name="Cowboy" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(630, 447)
+scale = Vector2(8, 8)
+characterPreset = 2
+
 [node name="Human" parent="." instance=ExtResource("1_pwtk7")]
-position = Vector2(514, 436)
+position = Vector2(837, 447)
 scale = Vector2(8, 8)
 animation = 2
 
 [node name="Maul" parent="." instance=ExtResource("1_pwtk7")]
-position = Vector2(703, 436)
+position = Vector2(1026, 447)
 scale = Vector2(8, 8)
-characterPreset = 1
 
 [node name="Yoda" parent="." instance=ExtResource("1_pwtk7")]
-position = Vector2(904, 436)
+position = Vector2(1227, 447)
 scale = Vector2(8, 8)
 animation = 3
-characterPreset = 2
+characterPreset = 5
 
 [node name="Zombie" parent="." instance=ExtResource("1_pwtk7")]
-position = Vector2(1114, 436)
+position = Vector2(1437, 447)
 scale = Vector2(8, 8)
 animation = 2
-characterPreset = 3
+characterPreset = 6
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
