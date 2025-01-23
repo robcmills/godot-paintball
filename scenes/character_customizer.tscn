@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds3lmcajkwbeq"]
+
+[ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_1ebr1"]
+[ext_resource type="Script" path="res://scripts/character_customizer.gd" id="1_oyich"]
+[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="1_pwtk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_13had"]
+font = ExtResource("1_1ebr1")
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyich")
+
+[node name="Human" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(514, 436)
+scale = Vector2(8, 8)
+animation = 2
+
+[node name="Maul" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(703, 436)
+scale = Vector2(8, 8)
+characterPreset = 1
+
+[node name="Yoda" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(904, 436)
+scale = Vector2(8, 8)
+animation = 3
+characterPreset = 2
+
+[node name="Zombie" parent="." instance=ExtResource("1_pwtk7")]
+position = Vector2(1114, 436)
+scale = Vector2(8, 8)
+animation = 2
+characterPreset = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.0
+offset_top = 56.0
+offset_right = 253.0
+offset_bottom = 107.0
+grow_horizontal = 2
+text = "Choose your character"
+label_settings = SubResource("LabelSettings_13had")
+horizontal_alignment = 1
