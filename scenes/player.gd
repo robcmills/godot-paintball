@@ -29,6 +29,11 @@ const helmetPresets = [
 	CharacterPreset.COWBOY,
 	CharacterPreset.DEER,
 ]
+const armsPresets = [
+	CharacterPreset.CHEF,
+	CharacterPreset.COWBOY,
+	CharacterPreset.DEER,
+]
 
 func getCharacterPresetString(preset: CharacterPreset):
 	const PRESET_STRINGS = {
@@ -57,7 +62,7 @@ func playAnimation():
 		earsSprite.play(spriteAnimation)
 	elif characterPreset in helmetPresets:
 		var humanAnimation = "Human_" + getPlayerAnimationString(animation)
-		if characterPreset in [CharacterPreset.CHEF, CharacterPreset.COWBOY]:
+		if characterPreset in armsPresets:
 			armsSprite.play(humanAnimation)
 		bodySprite.play(humanAnimation)
 		eyesSprite.play(humanAnimation)
@@ -84,7 +89,7 @@ func setCharacterPreset():
 		bodySprite.animation = humanAnimation
 		headSprite.animation = humanAnimation
 		eyesSprite.animation = humanAnimation
-		if characterPreset in [CharacterPreset.CHEF, CharacterPreset.COWBOY]:
+		if characterPreset in armsPresets:
 			armsSprite.animation = humanAnimation
 	
 		armorSprite.animation = spriteAnimation
