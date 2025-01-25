@@ -1,3 +1,4 @@
+class_name HippoCharacter
 extends CharacterBody2D
 
 @onready var armorSprite: AnimatedSprite2D = $CompositeSprite/Armor
@@ -8,10 +9,31 @@ extends CharacterBody2D
 @onready var headSprite: AnimatedSprite2D = $CompositeSprite/Head
 @onready var helmetSprite: AnimatedSprite2D = $CompositeSprite/Helmet
 
-enum PlayerAnimation { CLIMB, IDLE, READY, RUN }
+var sprites = [
+	armorSprite,
+	armsSprite,
+	bodySprite,
+	earsSprite,
+	eyesSprite,
+	headSprite,
+	helmetSprite,
+]
+
+# When duplicating player instances, need to manually reconnect
+# since @onready only connects once in _ready
+func getSprites():
+	armorSprite = get_node("CompositeSprite/Armor")
+	armsSprite = get_node("CompositeSprite/Arms")
+	bodySprite = get_node("CompositeSprite/Body")
+	earsSprite = get_node("CompositeSprite/Ears")
+	eyesSprite = get_node("CompositeSprite/Eyes")
+	headSprite = get_node("CompositeSprite/Head")
+	helmetSprite = get_node("CompositeSprite/Helmet")
+
+var PlayerAnimation := Enums.PlayerAnimation
 @export var animation := PlayerAnimation.IDLE
 
-func getPlayerAnimationString(playerAnimation: PlayerAnimation):
+func getPlayerAnimationString(playerAnimation: Enums.PlayerAnimation):
 	const ANIMATION_STRINGS = {
 		PlayerAnimation.CLIMB: "climb",
 		PlayerAnimation.IDLE: "idle",
@@ -20,7 +42,7 @@ func getPlayerAnimationString(playerAnimation: PlayerAnimation):
 	}
 	return ANIMATION_STRINGS[playerAnimation]
 
-enum CharacterPreset { ASTRONAUT, CHEF, COWBOY, DEER, HUMAN, MAUL, YODA, ZOMBIE }
+var CharacterPreset := Enums.CharacterPreset
 @export var characterPreset := CharacterPreset.HUMAN
 
 const helmetPresets = [
@@ -35,7 +57,7 @@ const armsPresets = [
 	CharacterPreset.DEER,
 ]
 
-func getCharacterPresetString(preset: CharacterPreset):
+func getCharacterPresetString(preset: Enums.CharacterPreset):
 	const PRESET_STRINGS = {
 		CharacterPreset.ASTRONAUT: "Astronaut",
 		CharacterPreset.CHEF: "Chef",
@@ -52,11 +74,15 @@ func getSpriteAnimation():
 	return getCharacterPresetString(characterPreset) + "_" + getPlayerAnimationString(animation)
 
 func playAnimation():
+	if null in sprites: getSprites()
+	
 	var spriteAnimation = getSpriteAnimation()
-	bodySprite.play(spriteAnimation)
-	headSprite.play(spriteAnimation)
-	armsSprite.play(spriteAnimation)
-	eyesSprite.play(spriteAnimation)
+	
+	if characterPreset not in helmetPresets:
+		bodySprite.play(spriteAnimation)
+		headSprite.play(spriteAnimation)
+		armsSprite.play(spriteAnimation)
+		eyesSprite.play(spriteAnimation)
 	
 	if characterPreset == CharacterPreset.YODA:
 		earsSprite.play(spriteAnimation)
@@ -73,10 +99,12 @@ func playAnimation():
 
 func setCharacterPreset():
 	var spriteAnimation = getSpriteAnimation()
-	bodySprite.animation = spriteAnimation
-	headSprite.animation = spriteAnimation
-	eyesSprite.animation = spriteAnimation
-	armsSprite.animation = spriteAnimation
+	
+	if characterPreset not in helmetPresets:
+		bodySprite.animation = spriteAnimation
+		headSprite.animation = spriteAnimation
+		eyesSprite.animation = spriteAnimation
+		armsSprite.animation = spriteAnimation
 	
 	if characterPreset == CharacterPreset.YODA:
 		earsSprite.visible = true

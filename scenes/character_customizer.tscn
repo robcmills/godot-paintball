@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds3lmcajkwbeq"]
+[gd_scene load_steps=4 format=3 uid="uid://ds3lmcajkwbeq"]
 
 [ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_1ebr1"]
 [ext_resource type="Script" path="res://scripts/character_customizer.gd" id="1_oyich"]
-[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="1_pwtk7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13had"]
 font = ExtResource("1_1ebr1")
@@ -43,74 +42,3 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Control" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Astronaut" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 0
-
-[node name="Control2" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Chef" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control2" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 1
-
-[node name="Control3" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Cowboy" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control3" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 2
-
-[node name="Control4" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Deer" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control4" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 3
-
-[node name="Control5" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Human" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control5" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-
-[node name="Control6" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Maul" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control6" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 5
-
-[node name="Control7" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Maul" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control7" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 6
-
-[node name="Control8" type="Control" parent="VBoxContainer/ScrollContainer/HFlowContainer"]
-custom_minimum_size = Vector2(250, 340)
-layout_mode = 2
-
-[node name="Maul" parent="VBoxContainer/ScrollContainer/HFlowContainer/Control8" instance=ExtResource("1_pwtk7")]
-position = Vector2(126, 298)
-scale = Vector2(8, 8)
-characterPreset = 7
