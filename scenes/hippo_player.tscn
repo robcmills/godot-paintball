@@ -1,4 +1,4 @@
-[gd_scene load_steps=1188 format=3 uid="uid://bo1hrdnuflfso"]
+[gd_scene load_steps=1199 format=3 uid="uid://bo1hrdnuflfso"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_63q8l"]
 [ext_resource type="Texture2D" uid="uid://c6i4y3yeldakh" path="res://assets/Hippo/Body/Human.png" id="2_3nin4"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://vewebwcoan4p" path="res://assets/Hippo/Armor/Predator.png" id="28_2irl3"]
 [ext_resource type="Texture2D" uid="uid://tnh5tt8o11vn" path="res://assets/Hippo/Armor/Rambo.png" id="29_xhjbh"]
 [ext_resource type="Texture2D" uid="uid://cu6vieu05npoa" path="res://assets/Hippo/Armor/Robo.png" id="30_dbt8d"]
+[ext_resource type="Texture2D" uid="uid://dym1pl4wwfu3x" path="res://assets/Hippo/Armor/PumpkinOveralls.png" id="30_g2gy1"]
 [ext_resource type="Texture2D" uid="uid://cenuqc8tg1g3e" path="res://assets/Hippo/Armor/SantaHelper.png" id="31_wuq87"]
 [ext_resource type="Texture2D" uid="uid://clqe4p8827vu2" path="res://assets/Hippo/Armor/Santa.png" id="32_ag8ft"]
 [ext_resource type="Texture2D" uid="uid://b30gcj04ojllh" path="res://assets/Hippo/Armor/ImperialShockDuder.png" id="34_ox0ch"]
@@ -1433,6 +1434,46 @@ region = Rect2(128, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ql5uw"]
 atlas = ExtResource("28_2irl3")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b63m"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hcmf"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bplxn"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ofo"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii4wx"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq1da"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnd8c"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rownd"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uwm1"]
+atlas = ExtResource("30_g2gy1")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2edw"]
+atlas = ExtResource("30_g2gy1")
 region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5a2r"]
@@ -3035,6 +3076,56 @@ animations = [{
 }],
 "loop": true,
 "name": &"Predator_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b63m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hcmf")
+}],
+"loop": true,
+"name": &"Pumpkin_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bplxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ofo")
+}],
+"loop": true,
+"name": &"Pumpkin_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii4wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq1da")
+}],
+"loop": true,
+"name": &"Pumpkin_ready",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnd8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rownd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uwm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2edw")
+}],
+"loop": true,
+"name": &"Pumpkin_run",
 "speed": 5.0
 }, {
 "frames": [{
@@ -9777,7 +9868,7 @@ animation = &"Human_ready"
 [node name="Armor" type="AnimatedSprite2D" parent="CompositeSprite"]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_5yi5j")
-animation = &"Sidious_run"
+animation = &"Pumpkin_run"
 
 [node name="Head" type="AnimatedSprite2D" parent="CompositeSprite"]
 y_sort_enabled = true
