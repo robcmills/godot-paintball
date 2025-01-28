@@ -1,11 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds3lmcajkwbeq"]
+[gd_scene load_steps=8 format=4 uid="uid://ds3lmcajkwbeq"]
 
 [ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_1ebr1"]
 [ext_resource type="Script" path="res://scripts/character_customizer.gd" id="1_oyich"]
+[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="1_pwtk7"]
+[ext_resource type="Texture2D" uid="uid://ddf76n3lh118" path="res://assets/ui.png" id="4_hprge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13had"]
 font = ExtResource("1_1ebr1")
 font_size = 64
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i06pb"]
+texture = ExtResource("4_hprge")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+6:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+7:4/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+2:4/0 = 0
+3:4/size_in_atlas = Vector2i(2, 1)
+3:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p25u5"]
+tile_size = Vector2i(8, 8)
+sources/1 = SubResource("TileSetAtlasSource_i06pb")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,8 +86,31 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
 
-[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SelectTile" type="TileMapLayer" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer"]
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAIAAAABAAAAAQABAAAAAAABAAQAAQABAAIAAAACAAAAAQABAAAAAAACAAQAAQABAAIAAAADAAAAAQACAAAAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAADAAMAAQACAAEAAAADAAQAAQACAAIAAAA=")
+tile_set = SubResource("TileSet_p25u5")
+
+[node name="Control" type="Control" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer"]
+visible = false
+custom_minimum_size = Vector2(250, 340)
+layout_mode = 2
+
+[node name="HippoPlayer" parent="VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/Control" instance=ExtResource("1_pwtk7")]
+position = Vector2(100, 250)
+scale = Vector2(8, 8)

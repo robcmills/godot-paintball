@@ -9866,6 +9866,7 @@ sprite_frames = SubResource("SpriteFrames_d5iwh")
 animation = &"Human_ready"
 
 [node name="Armor" type="AnimatedSprite2D" parent="CompositeSprite"]
+visible = false
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_5yi5j")
 animation = &"Pumpkin_run"
@@ -9897,6 +9898,7 @@ sprite_frames = SubResource("SpriteFrames_06opq")
 animation = &"Rambo_idle"
 
 [node name="Helmet" type="AnimatedSprite2D" parent="CompositeSprite"]
+visible = false
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_nm5in")
 animation = &"Sidious_idle"
