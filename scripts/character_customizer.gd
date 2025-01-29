@@ -2,9 +2,9 @@ extends Control
 
 var hippo_player_scene = preload("res://scenes/hippo_player.tscn")
 
-@onready var scroll_container: ScrollContainer = $VBoxContainer/ScrollContainer
-@onready var container: HFlowContainer = $VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer
-@onready var select_tile: TileMapLayer = $VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer/SelectTile
+@onready var scroll_container: ScrollContainer = $VBoxContainer/MarginContainer/ScrollContainer
+@onready var grid_container: GridContainer = $VBoxContainer/MarginContainer/ScrollContainer/GridContainer
+@onready var select_tile: TileMapLayer = $VBoxContainer/MarginContainer/ScrollContainer/GridContainer/SelectTile
 
 const animations = [
 	Enums.PlayerAnimation.IDLE,
@@ -17,10 +17,9 @@ var selected_preset := Enums.CharacterPreset.ASTRONAUT
 func _ready() -> void:
 	for preset in Enums.CharacterPreset.values():
 		var control = Control.new()
-		control.name = "CharacterControl"
-		control.custom_minimum_size = Vector2i(250, 340)
-		#control.focus_mode = Control.FOCUS_ALL
-		container.add_child(control)
+		control.custom_minimum_size = Vector2i(192, 240)
+		control.size_flags_horizontal = Control.SIZE_EXPAND
+		grid_container.add_child(control)
 		
 		var character = hippo_player_scene.instantiate()
 		character.characterPreset = preset
@@ -31,7 +30,7 @@ func _ready() -> void:
 		control.add_child(character)
 
 func _process(_delta: float) -> void:
-	for child in container.get_children():
+	for child in grid_container.get_children():
 		if child.get_class() != "Control":
 			continue
 		var character = child.get_child(0)
