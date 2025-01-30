@@ -29,28 +29,19 @@ func _ready() -> void:
 		character.playAnimation()
 		control.add_child(character)
 
-func _process(_delta: float) -> void:
-	for child in grid_container.get_children():
-		if child.get_class() != "Control":
-			continue
-		var character = child.get_child(0)
-		if character.characterPreset == selected_preset:
-			select_tile.position = child.position
-			scroll_container.ensure_control_visible(child)
-
 enum Direction { LEFT, RIGHT, UP, DOWN }
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("move_right"):
-		selected_preset = move_grid_selection(Direction.RIGHT)
+		move_grid_selection(Direction.RIGHT)
 	elif event.is_action_pressed("move_left"):
-		selected_preset = move_grid_selection(Direction.LEFT)
+		move_grid_selection(Direction.LEFT)
 	elif event.is_action_pressed("move_up"):
-		selected_preset = move_grid_selection(Direction.UP)
+		move_grid_selection(Direction.UP)
 	elif event.is_action_pressed("move_down"):
-		selected_preset = move_grid_selection(Direction.DOWN)	
+		move_grid_selection(Direction.DOWN)
 
-func move_grid_selection(direction: Direction) -> int:
+func move_grid_selection(direction: Direction) -> void:
 	var index := selected_preset
 	var total := Enums.CharacterPreset.size()
 	var columns := grid_container.columns
@@ -59,6 +50,7 @@ func move_grid_selection(direction: Direction) -> int:
 	var col := index % columns
 	var row_size := total % columns if row == rows - 1 else columns
 	var col_size := rows - 1 if col >= total % columns else rows
+	
 	if direction == Direction.LEFT:
 		col = (col - 1 + row_size) % row_size
 	elif direction == Direction.RIGHT:
@@ -67,4 +59,12 @@ func move_grid_selection(direction: Direction) -> int:
 		row = (row - 1 + col_size) % col_size
 	elif direction == Direction.DOWN:
 		row = (row + 1) % col_size
-	return row * columns + col
+	selected_preset = row * columns + col
+	
+	for child in grid_container.get_children():
+		if child.get_class() != "Control":
+			continue
+		var character = child.get_child(0)
+		if character.characterPreset == selected_preset:
+			select_tile.position = child.position
+			scroll_container.ensure_control_visible(child)
