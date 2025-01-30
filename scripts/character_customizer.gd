@@ -25,7 +25,7 @@ func _ready() -> void:
 		character.characterPreset = preset
 		character.animation = animations.pick_random()
 		character.scale = Vector2i(8, 8)
-		character.position = Vector2i(100, 250)
+		character.position = Vector2i(100, 260)
 		character.playAnimation()
 		control.add_child(character)
 
@@ -66,5 +66,5 @@ func move_grid_selection(direction: Direction) -> int:
 	elif direction == Direction.UP:
 		row = (row - 1 + col_size) % col_size
 	elif direction == Direction.DOWN:
-		row = (row + 1) % row_size
+		row = (row + 1) % col_size
 	return row * columns + col
