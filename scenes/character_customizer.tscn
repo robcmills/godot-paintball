@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds3lmcajkwbeq"]
+[gd_scene load_steps=7 format=4 uid="uid://ds3lmcajkwbeq"]
 
 [ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_1ebr1"]
 [ext_resource type="Script" path="res://scripts/character_customizer.gd" id="1_oyich"]
-[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="1_pwtk7"]
 [ext_resource type="Texture2D" uid="uid://ddf76n3lh118" path="res://assets/ui.png" id="4_hprge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13had"]
@@ -107,12 +106,3 @@ columns = 6
 scale = Vector2(6, 6)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQACAAAAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAAAAAQAAQAAAAIAAAABAAQAAQABAAIAAAACAAQAAQABAAIAAAADAAQAAQACAAIAAAAAAAMAAQAAAAEAAAADAAMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_p25u5")
-
-[node name="Control" type="Control" parent="VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-visible = false
-custom_minimum_size = Vector2(192, 240)
-layout_mode = 2
-
-[node name="HippoPlayer" parent="VBoxContainer/MarginContainer/ScrollContainer/GridContainer/Control" instance=ExtResource("1_pwtk7")]
-position = Vector2(100, 260)
-scale = Vector2(8, 8)
