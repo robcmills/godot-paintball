@@ -38,15 +38,33 @@ func _process(_delta: float) -> void:
 			select_tile.position = child.position
 			scroll_container.ensure_control_visible(child)
 
+enum Direction { LEFT, RIGHT, UP, DOWN }
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("move_right"):
-		var new_preset = selected_preset + 1
-		if new_preset >= Enums.CharacterPreset.size():
-			new_preset = 0
-		selected_preset = Enums.CharacterPreset.values()[new_preset]
+		selected_preset = move_grid_selection(Direction.RIGHT)
 	elif event.is_action_pressed("move_left"):
-		var new_preset = selected_preset - 1
-		if new_preset < 0:
-			new_preset = Enums.CharacterPreset.size() - 1
-		selected_preset = Enums.CharacterPreset.values()[new_preset]
+		selected_preset = move_grid_selection(Direction.LEFT)
+	elif event.is_action_pressed("move_up"):
+		selected_preset = move_grid_selection(Direction.UP)
+	elif event.is_action_pressed("move_down"):
+		selected_preset = move_grid_selection(Direction.DOWN)	
+
+func move_grid_selection(direction: Direction) -> int:
+	var index := selected_preset
+	var total := Enums.CharacterPreset.size()
+	var columns := grid_container.columns
+	var rows := floori((total + columns - 1) / columns)
+	var row := floori(index / columns)
+	var col := index % columns
+	var row_size := total % columns if row == rows - 1 else columns
+	var col_size := rows - 1 if col >= total % columns else rows
+	if direction == Direction.LEFT:
+		col = (col - 1 + row_size) % row_size
+	elif direction == Direction.RIGHT:
+		col = (col + 1) % row_size
+	elif direction == Direction.UP:
+		row = (row - 1 + col_size) % col_size
+	elif direction == Direction.DOWN:
+		row = (row + 1) % row_size
+	return row * columns + col
