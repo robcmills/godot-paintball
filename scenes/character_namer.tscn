@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg0jybsr7wv4k"]
+
+[ext_resource type="Script" path="res://scripts/character_namer.gd" id="1_0rgdx"]
+[ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_4vm6g"]
+[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="3_ego0q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fp256"]
+font = ExtResource("1_4vm6g")
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rgdx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Name your character:"
+label_settings = SubResource("LabelSettings_fp256")
+horizontal_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(420, 72)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4vm6g")
+theme_override_font_sizes/font_size = 64
+alignment = 1
+max_length = 32
+caret_blink = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer3"]
+layout_mode = 2
+
+[node name="HippoPlayer" parent="VBoxContainer/CenterContainer3/Control" instance=ExtResource("3_ego0q")]
+scale = Vector2(8, 8)
+
+[connection signal="text_changed" from="VBoxContainer/CenterContainer2/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/CenterContainer2/LineEdit" to="." method="_on_line_edit_text_submitted"]
