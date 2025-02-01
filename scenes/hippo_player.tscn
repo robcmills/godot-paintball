@@ -1,6 +1,6 @@
 [gd_scene load_steps=1199 format=3 uid="uid://bo1hrdnuflfso"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_63q8l"]
+[ext_resource type="Script" path="res://scripts/hippo_player.gd" id="1_8jp0c"]
 [ext_resource type="Texture2D" uid="uid://c6i4y3yeldakh" path="res://assets/Hippo/Body/Human.png" id="2_3nin4"]
 [ext_resource type="Texture2D" uid="uid://dgo4533440rut" path="res://assets/Hippo/Body/Duda.png" id="2_lmut0"]
 [ext_resource type="Texture2D" uid="uid://clhtb2d7tuii4" path="res://assets/Hippo/Head/Human.png" id="3_sremf"]
@@ -9851,7 +9851,7 @@ animations = [{
 
 [node name="HippoPlayer" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_63q8l")
+script = ExtResource("1_8jp0c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
