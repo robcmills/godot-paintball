@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 var cardinal := Enums.Cardinal.EAST
 
+func _ready() -> void:
+	sprite.equip_gun()
+
 func _physics_process(delta):
 	if velocity.x > 0:
 		sprite.scale = Vector2i(1, 1)

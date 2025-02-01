@@ -9,6 +9,7 @@ extends Node2D
 @onready var eyesSprite: AnimatedSprite2D = $Eyes
 @onready var headSprite: AnimatedSprite2D = $Head
 @onready var helmetSprite: AnimatedSprite2D = $Helmet
+@onready var gunSprite: AnimatedSprite2D = $Gun
 
 var sprites = [
 	armorSprite,
@@ -30,6 +31,7 @@ func getSprites():
 	eyesSprite = get_node("Eyes")
 	headSprite = get_node("Head")
 	helmetSprite = get_node("Helmet")
+	gunSprite = get_node("Gun")
 
 var PlayerAnimation := Enums.PlayerAnimation
 @export var animation := PlayerAnimation.IDLE
@@ -163,6 +165,9 @@ func playAnimation():
 	
 		armorSprite.play(spriteAnimation)
 		helmetSprite.play(spriteAnimation)
+	
+	var gunAnimation = "Bolt_" + getPlayerAnimationString(animation)
+	gunSprite.play(gunAnimation)
 
 func setCharacterPreset():
 	var spriteAnimation = getSpriteAnimation()
@@ -194,7 +199,10 @@ func setCharacterPreset():
 	else:
 		armorSprite.visible = false
 		helmetSprite.visible = false
-		
+
+func equip_gun() -> void:
+	armsSprite.visible = false
+	gunSprite.visible = true
 
 func _ready() -> void:
 	setCharacterPreset()

@@ -9897,7 +9897,7 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_qknap")
 animation = &"Terminator_idle"
 
-[node name="Firearm" type="AnimatedSprite2D" parent="."]
+[node name="Gun" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
 position = Vector2(0, -12)
