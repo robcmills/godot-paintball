@@ -19,5 +19,6 @@ func _physics_process(delta):
 		sprite.animation = Enums.PlayerAnimation.RUN
 		var angle = velocity.angle() / (PI / 4)
 		cardinal = wrapi(roundi(angle), 0, 8)
+		sprite.cardinal = cardinal
 	
 	sprite.playAnimation()

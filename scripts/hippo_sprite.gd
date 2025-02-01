@@ -204,5 +204,33 @@ func equip_gun() -> void:
 	armsSprite.visible = false
 	gunSprite.visible = true
 
+func updateCardinal() -> void:
+	if cardinal in [Enums.Cardinal.EAST, Enums.Cardinal.WEST]:
+		gunSprite.rotation_degrees = 0
+		gunSprite.offset = Vector2i(0, 12)
+		move_child(gunSprite, -1)
+	elif cardinal in [Enums.Cardinal.SOUTH_EAST, Enums.Cardinal.SOUTH_WEST]:
+		gunSprite.rotation_degrees = 45
+		gunSprite.offset = Vector2i(0, 12)
+		move_child(gunSprite, -1)
+	elif cardinal == Enums.Cardinal.SOUTH:
+		gunSprite.rotation_degrees = 90
+		gunSprite.offset = Vector2i(0, 12)
+		move_child(gunSprite, -1)
+	elif cardinal in [Enums.Cardinal.NORTH_EAST, Enums.Cardinal.NORTH_WEST]:
+		gunSprite.rotation_degrees = -45
+		gunSprite.offset = Vector2i(0, 12)
+		move_child(gunSprite, -1)
+	elif cardinal == Enums.Cardinal.NORTH:
+		gunSprite.rotation_degrees = -90
+		gunSprite.offset = Vector2i(4, 12)
+		move_child(gunSprite, 0)
+
+@export var cardinal := Enums.Cardinal.EAST:
+	set(new_cardinal):
+		if cardinal == new_cardinal: return
+		cardinal = new_cardinal
+		updateCardinal()
+
 func _ready() -> void:
 	setCharacterPreset()
