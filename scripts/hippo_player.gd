@@ -1,2 +1,0 @@
-class_name HippoCharacter
-extends CharacterBody2D

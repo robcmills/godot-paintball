@@ -1,5 +1,16 @@
 extends Node
 
+enum Cardinal {
+	EAST,
+	SOUTH_EAST,
+	SOUTH,
+	SOUTH_WEST,
+	WEST,
+	NORTH_WEST,
+	NORTH,
+	NORTH_EAST,
+}
+
 enum CharacterPreset {
 	ASTRONAUT,
 	CHEF,

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cepra2yx05tcy" path="res://scenes/office.tscn" id="1_kwcg8"]
 [ext_resource type="PackedScene" uid="uid://ch844kd7xe0cc" path="res://scenes/hippo_player_controller.tscn" id="2_6g1th"]
-[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="3_xhttu"]
+[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_character.tscn" id="3_xhttu"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true

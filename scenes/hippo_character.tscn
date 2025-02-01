@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1hrdnuflfso"]
+
+[ext_resource type="Script" path="res://scripts/hippo_character.gd" id="1_gqxx0"]
+[ext_resource type="PackedScene" uid="uid://djmn76lmlqrso" path="res://scenes/hippo_sprite.tscn" id="2_nypgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2bfm"]
+size = Vector2(8, 6)
+
+[node name="HippoCharacter" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_gqxx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_j2bfm")
+
+[node name="HippoSprite" parent="." instance=ExtResource("2_nypgp")]
