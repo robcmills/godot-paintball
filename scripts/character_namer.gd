@@ -1,7 +1,8 @@
 extends Control
 
 @onready var line_edit: LineEdit = $VBoxContainer/CenterContainer2/LineEdit
-@onready var character: HippoCharacter = $VBoxContainer/CenterContainer3/Control/HippoPlayer
+@onready var character: HippoSprite = $VBoxContainer/CenterContainer3/Control/HippoSprite
+
 
 var character_name := ""
 var character_preset := Enums.CharacterPreset.HUMAN

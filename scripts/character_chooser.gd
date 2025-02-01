@@ -1,6 +1,6 @@
 extends Control
 
-var hippo_player_scene = preload("res://scenes/hippo_player.tscn")
+var hippo_sprite = preload("res://scenes/hippo_sprite.tscn")
 
 @onready var scroll_container: ScrollContainer = $VBoxContainer/MarginContainer/ScrollContainer
 @onready var grid_container: GridContainer = $VBoxContainer/MarginContainer/ScrollContainer/GridContainer
@@ -21,7 +21,7 @@ func _ready() -> void:
 		control.size_flags_horizontal = Control.SIZE_EXPAND
 		grid_container.add_child(control)
 		
-		var character = hippo_player_scene.instantiate()
+		var character = hippo_sprite.instantiate()
 		character.characterPreset = preset
 		character.animation = animations.pick_random()
 		character.scale = Vector2i(8, 8)
@@ -45,8 +45,8 @@ func move_grid_selection(direction: Direction) -> void:
 	var index := selected_preset
 	var total := Enums.CharacterPreset.size()
 	var columns := grid_container.columns
-	var rows := floori((total + columns - 1) / columns)
-	var row := floori(index / columns)
+	var rows := floori((total + columns - 1.0) / columns)
+	var row := floori(index / float(columns))
 	var col := index % columns
 	var row_size := total % columns if row == rows - 1 else columns
 	var col_size := rows - 1 if col >= total % columns else rows
@@ -59,7 +59,7 @@ func move_grid_selection(direction: Direction) -> void:
 		row = (row - 1 + col_size) % col_size
 	elif direction == Direction.DOWN:
 		row = (row + 1) % col_size
-	selected_preset = row * columns + col
+	selected_preset = row * columns + col as Enums.CharacterPreset
 	
 	for child in grid_container.get_children():
 		if child.get_class() != "Control":

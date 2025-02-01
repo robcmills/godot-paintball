@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/character_namer.gd" id="1_0rgdx"]
 [ext_resource type="FontFile" uid="uid://qmu7ttunkneb" path="res://assets/monogram.ttf" id="1_4vm6g"]
-[ext_resource type="PackedScene" uid="uid://bo1hrdnuflfso" path="res://scenes/hippo_player.tscn" id="3_ego0q"]
+[ext_resource type="PackedScene" uid="uid://djmn76lmlqrso" path="res://scenes/hippo_sprite.tscn" id="3_fst3j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fp256"]
 font = ExtResource("1_4vm6g")
@@ -55,7 +55,7 @@ size_flags_vertical = 3
 [node name="Control" type="Control" parent="VBoxContainer/CenterContainer3"]
 layout_mode = 2
 
-[node name="HippoPlayer" parent="VBoxContainer/CenterContainer3/Control" instance=ExtResource("3_ego0q")]
+[node name="HippoSprite" parent="VBoxContainer/CenterContainer3/Control" instance=ExtResource("3_fst3j")]
 scale = Vector2(8, 8)
 
 [connection signal="text_changed" from="VBoxContainer/CenterContainer2/LineEdit" to="." method="_on_line_edit_text_changed"]
