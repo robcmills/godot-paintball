@@ -9907,7 +9907,7 @@ script = ExtResource("1_2tyk3")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_jjt6l")
-animation = &"Human_climb_idle"
+animation = &"Human_idle"
 
 [node name="Armor" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9918,7 +9918,7 @@ animation = &"Pumpkin_run"
 [node name="Head" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_oyjm1")
-animation = &"Human_climb_idle"
+animation = &"Human_idle"
 
 [node name="Ears" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9928,7 +9928,7 @@ animation = &"Yoda_run"
 [node name="Eyes" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_54wj0")
-animation = &"Human_climb_idle"
+animation = &"Human_idle"
 
 [node name="Arms" type="AnimatedSprite2D" parent="."]
 visible = false
