@@ -10,12 +10,14 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+	# Flip sprite horizontally.
 	if input_vector.x > 0:
 		sprite.scale = Vector2i(1, 1)
 	elif input_vector.x < 0:
 		sprite.scale = Vector2i(-1, 1)
 	
-	
+	# Determine which sprite animation to play based on cardinal direction player is facing.
 	sprite.animation = (
 		Enums.PlayerAnimation.CLIMB_IDLE if cardinal == Enums.Cardinal.NORTH
 		else Enums.PlayerAnimation.READY
@@ -30,7 +32,12 @@ func _physics_process(_delta):
 		)
 	
 	sprite.playAnimation()
-	if sprite.animation not in [Enums.PlayerAnimation.CLIMB, Enums.PlayerAnimation.RUN]:
+	if (
+		Globals.animateIdlePlayer == false
+		and sprite.animation in [
+			Enums.PlayerAnimation.IDLE,
+			Enums.PlayerAnimation.CLIMB_IDLE,
+			Enums.PlayerAnimation.READY,
+		]
+	):
 		sprite.stopAnimation()
-	#else:
-		#sprite.stopAnimation()

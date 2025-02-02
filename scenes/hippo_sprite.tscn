@@ -9918,7 +9918,8 @@ animation = &"Pumpkin_run"
 [node name="Head" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_oyjm1")
-animation = &"Human_idle"
+animation = &"Human_ready"
+frame_progress = 0.504698
 
 [node name="Ears" type="AnimatedSprite2D" parent="."]
 visible = false
