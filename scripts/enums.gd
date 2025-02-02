@@ -50,3 +50,8 @@ enum PlayerAnimation {
 	READY,
 	RUN,
 }
+
+enum Weapon {
+	BOLT,
+	NONE,
+}

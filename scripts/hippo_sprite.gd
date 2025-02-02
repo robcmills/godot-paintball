@@ -209,9 +209,12 @@ func setCharacterPreset():
 		armorSprite.visible = false
 		helmetSprite.visible = false
 
-func equip_gun() -> void:
-	armsSprite.visible = false
-	gunSprite.visible = true
+@export var weapon := Enums.Weapon.BOLT:
+	set(new_weapon):
+		weapon = new_weapon
+		armsSprite.visible = new_weapon == Enums.Weapon.NONE
+		gunSprite.visible = new_weapon != Enums.Weapon.NONE
+
 
 func updateCardinal() -> void:
 	if cardinal in [Enums.Cardinal.EAST, Enums.Cardinal.WEST]:

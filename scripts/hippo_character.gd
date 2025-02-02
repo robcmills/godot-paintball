@@ -6,7 +6,7 @@ extends CharacterBody2D
 var cardinal := Enums.Cardinal.EAST
 
 func _ready() -> void:
-	sprite.equip_gun()
+	sprite.weapon = Enums.Weapon.BOLT
 
 func _physics_process(_delta):
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
