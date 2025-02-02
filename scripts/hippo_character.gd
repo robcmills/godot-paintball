@@ -20,7 +20,7 @@ func _physics_process(_delta):
 	)
 	if velocity.length() != 0:
 		var angle = velocity.angle() / (PI / 4)
-		cardinal = wrapi(roundi(angle), 0, 8)
+		cardinal = wrapi(roundi(angle), 0, 8) as Enums.Cardinal
 		sprite.cardinal = cardinal
 		sprite.animation = (
 			Enums.PlayerAnimation.CLIMB if cardinal == Enums.Cardinal.NORTH
