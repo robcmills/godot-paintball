@@ -1,4 +1,4 @@
-[gd_scene load_steps=1198 format=3 uid="uid://djmn76lmlqrso"]
+[gd_scene load_steps=1203 format=3 uid="uid://djmn76lmlqrso"]
 
 [ext_resource type="Script" path="res://scripts/hippo_sprite.gd" id="1_2tyk3"]
 [ext_resource type="Texture2D" uid="uid://c6i4y3yeldakh" path="res://assets/Hippo/Body/Human.png" id="2_4oiwb"]
@@ -117,6 +117,10 @@ region = Rect2(0, 320, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_grfpd"]
 atlas = ExtResource("2_4oiwb")
 region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5kan"]
+atlas = ExtResource("2_4oiwb")
+region = Rect2(192, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cr5kf"]
 atlas = ExtResource("2_4oiwb")
@@ -281,6 +285,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Human_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5kan")
+}],
+"loop": true,
+"name": &"Human_climb_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -3634,6 +3646,10 @@ region = Rect2(0, 320, 64, 64)
 atlas = ExtResource("41_b2f4a")
 region = Rect2(64, 320, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy73f"]
+atlas = ExtResource("41_b2f4a")
+region = Rect2(0, 320, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw1uj"]
 atlas = ExtResource("41_b2f4a")
 region = Rect2(0, 64, 64, 64)
@@ -3797,6 +3813,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Human_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy73f")
+}],
+"loop": true,
+"name": &"Human_climb_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -4090,6 +4114,10 @@ region = Rect2(0, 320, 64, 64)
 atlas = ExtResource("46_7y83i")
 region = Rect2(64, 320, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bf3o"]
+atlas = ExtResource("46_7y83i")
+region = Rect2(0, 320, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c5g14"]
 atlas = ExtResource("46_7y83i")
 region = Rect2(0, 64, 64, 64)
@@ -4253,6 +4281,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Human_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bf3o")
+}],
+"loop": true,
+"name": &"Human_climb_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -9677,6 +9713,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1byvf"]
+atlas = ExtResource("108_x7ht5")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dnvl"]
+atlas = ExtResource("108_x7ht5")
+region = Rect2(0, 64, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe314"]
 atlas = ExtResource("108_x7ht5")
 region = Rect2(0, 64, 64, 64)
@@ -9751,9 +9795,20 @@ region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb0n4"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1byvf")
+}],
 "loop": true,
 "name": &"Bolt_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dnvl")
+}],
+"loop": true,
+"name": &"Bolt_climb_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -9852,7 +9907,7 @@ script = ExtResource("1_2tyk3")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_jjt6l")
-animation = &"Human_ready"
+animation = &"Human_climb_idle"
 
 [node name="Armor" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9863,7 +9918,7 @@ animation = &"Pumpkin_run"
 [node name="Head" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_oyjm1")
-animation = &"Human_ready"
+animation = &"Human_climb_idle"
 
 [node name="Ears" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9873,13 +9928,13 @@ animation = &"Yoda_run"
 [node name="Eyes" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_54wj0")
-animation = &"Human_idle"
+animation = &"Human_climb_idle"
 
 [node name="Arms" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_6yhop")
-animation = &"Human_idle"
+animation = &"Human_climb"
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9902,5 +9957,5 @@ animation = &"Terminator_idle"
 y_sort_enabled = true
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_nb0n4")
-animation = &"Bolt_idle"
+animation = &"Bolt_climb_idle"
 offset = Vector2(0, 12)

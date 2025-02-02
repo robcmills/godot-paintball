@@ -17,4 +17,4 @@ position = Vector2(87, 118)
 scale = Vector2(1.2, 1.2)
 
 [node name="Camera2D" type="Camera2D" parent="HippoPlayer"]
-zoom = Vector2(7, 7)
+zoom = Vector2(6, 6)

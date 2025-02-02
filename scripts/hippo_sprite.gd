@@ -39,6 +39,7 @@ var PlayerAnimation := Enums.PlayerAnimation
 func getPlayerAnimationString(playerAnimation: Enums.PlayerAnimation):
 	const ANIMATION_STRINGS = {
 		PlayerAnimation.CLIMB: "climb",
+		PlayerAnimation.CLIMB_IDLE: "climb_idle",
 		PlayerAnimation.IDLE: "idle",
 		PlayerAnimation.READY: "ready",
 		PlayerAnimation.RUN: "run"
@@ -150,7 +151,8 @@ func playAnimation():
 	if characterPreset not in helmetPresets:
 		bodySprite.play(spriteAnimation)
 		headSprite.play(spriteAnimation)
-		armsSprite.play(spriteAnimation)
+		if armsSprite.visible:
+			armsSprite.play(spriteAnimation)
 		eyesSprite.play(spriteAnimation)
 	
 	if characterPreset == CharacterPreset.YODA:

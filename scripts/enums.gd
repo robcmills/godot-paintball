@@ -45,6 +45,7 @@ enum CharacterPreset {
 
 enum PlayerAnimation {
 	CLIMB,
+	CLIMB_IDLE,
 	IDLE,
 	READY,
 	RUN,
