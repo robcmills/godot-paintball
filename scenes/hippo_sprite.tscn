@@ -9931,10 +9931,9 @@ sprite_frames = SubResource("SpriteFrames_54wj0")
 animation = &"Human_idle"
 
 [node name="Arms" type="AnimatedSprite2D" parent="."]
-visible = false
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_6yhop")
-animation = &"Human_climb"
+animation = &"Human_idle"
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -9954,6 +9953,7 @@ sprite_frames = SubResource("SpriteFrames_qknap")
 animation = &"Terminator_idle"
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_nb0n4")

@@ -19,6 +19,7 @@ var sprites = [
 	eyesSprite,
 	headSprite,
 	helmetSprite,
+	gunSprite,
 ]
 
 # When instantiating programmatically, need to manually reconnect
@@ -170,6 +171,12 @@ func playAnimation():
 	
 	var gunAnimation = "Bolt_" + getPlayerAnimationString(animation)
 	gunSprite.play(gunAnimation)
+
+
+func stopAnimation() -> void:
+	for sprite in get_children():
+		sprite.stop()
+	
 
 func setCharacterPreset():
 	var spriteAnimation = getSpriteAnimation()
