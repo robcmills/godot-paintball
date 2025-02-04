@@ -11,6 +11,27 @@ enum Cardinal {
 	NORTH_EAST,
 }
 
+func cardinalToVector(cardinal: int) -> Vector2:
+	match cardinal:
+		Cardinal.EAST:
+			return Vector2(1, 0)
+		Cardinal.SOUTH_EAST:
+			return Vector2(1, 1).normalized()
+		Cardinal.SOUTH:
+			return Vector2(0, 1)
+		Cardinal.SOUTH_WEST:
+			return Vector2(-1, 1).normalized()
+		Cardinal.WEST:
+			return Vector2(-1, 0)
+		Cardinal.NORTH_WEST:
+			return Vector2(-1, -1).normalized()
+		Cardinal.NORTH:
+			return Vector2(0, -1)
+		Cardinal.NORTH_EAST:
+			return Vector2(1, -1).normalized()
+		_:
+			return Vector2.ZERO  # Fallback in case of an invalid input
+
 enum CharacterPreset {
 	ASTRONAUT,
 	CHEF,

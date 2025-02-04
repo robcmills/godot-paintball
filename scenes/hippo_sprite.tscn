@@ -9961,4 +9961,4 @@ animation = &"Bolt_climb_idle"
 offset = Vector2(0, 12)
 
 [node name="MuzzleMarker" type="Marker2D" parent="Gun"]
-position = Vector2(10, -1)
+position = Vector2(10, -1.5)

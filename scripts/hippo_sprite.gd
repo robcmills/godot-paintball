@@ -10,6 +10,7 @@ extends Node2D
 @onready var headSprite: AnimatedSprite2D = $Head
 @onready var helmetSprite: AnimatedSprite2D = $Helmet
 @onready var gunSprite: AnimatedSprite2D = $Gun
+@onready var muzzle_marker: Marker2D = $Gun/MuzzleMarker
 
 var sprites = [
 	armorSprite,
@@ -208,6 +209,7 @@ func setCharacterPreset():
 	else:
 		armorSprite.visible = false
 		helmetSprite.visible = false
+
 
 @export var weapon := Enums.Weapon.BOLT:
 	set(new_weapon):
