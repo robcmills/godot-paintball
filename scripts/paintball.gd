@@ -6,25 +6,23 @@ class_name Paintball extends Node2D
 var direction := Vector2.ZERO
 
 @onready var timer := $Timer
-#@onready var hitbox := $HitBox
-@onready var sprite := $Sprite
-#@onready var impact_detector := $ImpactDetector
+@onready var hitbox := $Hitbox
+#@onready var sprite := $Sprite
 
 
 func _ready():
 	set_as_top_level(true)
 	look_at(position + direction)
 	timer.start(lifetime)
-	#impact_detector.connect("body_entered", self, "_on_impact")
 
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 
 
-#func _on_impact(_body: Node) -> void:
-	#queue_free()
-
-
 func _on_timer_timeout() -> void:
+	queue_free()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
 	queue_free()
