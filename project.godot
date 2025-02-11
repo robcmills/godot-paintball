@@ -68,6 +68,11 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="OfficeLayer"
+2d_physics/layer_2="SplatsLayer"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

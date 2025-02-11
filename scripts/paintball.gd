@@ -1,7 +1,7 @@
 class_name Paintball extends Node2D
 
-@export var speed := 750.0
-@export var lifetime := 3.0
+@export var speed := 500.0 # 750.0
+@export var lifetime := 5.0
 
 var direction := Vector2.ZERO
 
@@ -21,8 +21,4 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	queue_free()
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
 	queue_free()
