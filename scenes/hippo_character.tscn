@@ -11,7 +11,7 @@ y_sort_enabled = true
 script = ExtResource("1_gqxx0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_j2bfm")
 
 [node name="HippoSprite" parent="." instance=ExtResource("2_nypgp")]

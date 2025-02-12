@@ -9906,56 +9906,65 @@ script = ExtResource("1_2tyk3")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_jjt6l")
 animation = &"Human_idle"
 
 [node name="Armor" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_g45ma")
 animation = &"Pumpkin_run"
 
 [node name="Head" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_oyjm1")
 animation = &"Human_ready"
 
 [node name="Ears" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_f4hv7")
 animation = &"Yoda_run"
 
 [node name="Eyes" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_54wj0")
 animation = &"Human_idle"
 
 [node name="Arms" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_6yhop")
 animation = &"Human_idle"
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_ucvwj")
 animation = &"Rambo_idle"
 
 [node name="Helmet" type="AnimatedSprite2D" parent="."]
 visible = false
 y_sort_enabled = true
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_1f527")
 animation = &"Sidious_idle"
 
 [node name="Mask" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_qknap")
 animation = &"Terminator_idle"
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -12)
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_nb0n4")
 animation = &"Bolt_climb_idle"
 offset = Vector2(0, 12)
