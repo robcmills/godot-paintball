@@ -25,7 +25,7 @@ const SPLAT_SPREAD := 90
 # The distance from center splat to furthest
 const SPLAT_LENGTH := 8
 # The total number of splats to draw
-const SPLAT_DENSITY := 16
+const SPLAT_DENSITY := 8
 # The radius of the largest center splat
 const SPLAT_MAX_SIZE := 4.0
 # The radius of the smallest furthest splat
@@ -33,7 +33,7 @@ const SPLAT_MIN_SIZE := 1.0
 # The color of the splat
 const SPLAT_COLOR := Color("green")
 # The amount of randomness to use (higher is more chaotic)
-const SPLAT_RANDOMNESS := 3
+const SPLAT_RANDOMNESS := 4
 # The amount of color variation to use
 const SPLAT_COLOR_RANDOMNESS := 0.5
 

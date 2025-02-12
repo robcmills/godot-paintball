@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cepra2yx05tcy"]
+[gd_scene load_steps=20 format=4 uid="uid://cepra2yx05tcy"]
 
 [ext_resource type="Texture2D" uid="uid://bovffa8txdl84" path="res://assets/Office_walls_floors_16x16.png" id="1_1we10"]
 [ext_resource type="Script" path="res://scripts/office.gd" id="1_8ovyv"]
@@ -294,13 +294,22 @@ size = Vector2(16, 160)
 size = Vector2(304, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5t3t4"]
-size = Vector2(26, 30)
+size = Vector2(26, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4b6g"]
-size = Vector2(38, 17)
+size = Vector2(38, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw05x"]
-size = Vector2(52, 30)
+size = Vector2(52, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tng6u"]
+size = Vector2(30, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4uso"]
+size = Vector2(26, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ujmv"]
+size = Vector2(108, 17)
 
 [node name="Office" type="Node2D"]
 y_sort_enabled = true
@@ -385,17 +394,35 @@ shape = SubResource("RectangleShape2D_gjaev")
 [node name="Area2D5" type="Area2D" parent="Splats"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D5"]
-position = Vector2(56, 43)
+position = Vector2(56, 41)
 shape = SubResource("RectangleShape2D_5t3t4")
 
 [node name="Area2D6" type="Area2D" parent="Splats"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D6"]
-position = Vector2(104, 41.5)
+position = Vector2(104, 41)
 shape = SubResource("RectangleShape2D_c4b6g")
 
 [node name="Area2D7" type="Area2D" parent="Splats"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D7"]
-position = Vector2(160, 43)
+position = Vector2(160, 40.5)
 shape = SubResource("RectangleShape2D_kw05x")
+
+[node name="Area2D8" type="Area2D" parent="Splats"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D8"]
+position = Vector2(288, 85.5)
+shape = SubResource("RectangleShape2D_tng6u")
+
+[node name="Area2D9" type="Area2D" parent="Splats"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D9"]
+position = Vector2(296, 25)
+shape = SubResource("RectangleShape2D_t4uso")
+
+[node name="Area2D10" type="Area2D" parent="Splats"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Splats/Area2D10"]
+position = Vector2(266, 151.5)
+shape = SubResource("RectangleShape2D_2ujmv")
