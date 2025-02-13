@@ -13,8 +13,8 @@ y_sort_enabled = true
 player = NodePath("../HippoPlayer")
 
 [node name="HippoPlayer" parent="." instance=ExtResource("3_xhttu")]
-position = Vector2(87, 118)
+position = Vector2(183, 103)
 scale = Vector2(1.2, 1.2)
 
 [node name="Camera2D" type="Camera2D" parent="HippoPlayer"]
-zoom = Vector2(6, 6)
+zoom = Vector2(5, 5)

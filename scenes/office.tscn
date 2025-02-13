@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cepra2yx05tcy"]
+[gd_scene load_steps=36 format=4 uid="uid://cepra2yx05tcy"]
 
 [ext_resource type="Texture2D" uid="uid://bovffa8txdl84" path="res://assets/Office_walls_floors_16x16.png" id="1_1we10"]
 [ext_resource type="Script" path="res://scripts/office.gd" id="1_8ovyv"]
@@ -296,14 +296,23 @@ size = Vector2(10, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycvno"]
 size = Vector2(26, 21)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcokh"]
-size = Vector2(30, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eu41"]
+size = Vector2(10, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyit"]
-size = Vector2(14, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y02kw"]
+size = Vector2(15, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eupax"]
-size = Vector2(30, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pgqc"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4xc4"]
+size = Vector2(15, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwbcn"]
+size = Vector2(15, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvay6"]
+size = Vector2(15, 12)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3dvn7"]
 resource_local_to_scene = true
@@ -359,7 +368,7 @@ tile_set = SubResource("TileSet_orncp")
 
 [node name="Furniture" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAAIAAQAGAAYAAAAHAAIAAQAHAAYAAAAFAAIAAQAFAAYAAAABAAEAAgAGAAcAAAAIAAIAAAANABUAAAAJAAIAAAAOABUAAAAKAAIAAAAPABUAAAALAAIAAAAQABUAAAASAAEAAAAQAAIAAAARAAUAAgACACkAABARAAYAAgACACoAABASAAYAAgABACoAABARAAQAAgABACgAABASAAQAAgAAACgAABANAAIAAgAKACYAAAASAAgAAgAHAAwAAAAQAAgAAgAHAA8AAAAOAAgAAgAHAAwAAAANAAgAAgAGAAcAAAADAAIAAAAIABUAAAABAAkAAAASABAAAAASAAUAAgABACkAABA=")
+tile_map_data = PackedByteArray("AAAGAAIAAQAGAAYAAAAHAAIAAQAHAAYAAAAFAAIAAQAFAAYAAAABAAEAAgAGAAcAAAAIAAIAAAANABUAAAAJAAIAAAAOABUAAAAKAAIAAAAPABUAAAALAAIAAAAQABUAAAASAAEAAAAQAAIAAAANAAIAAgAKACYAAAASAAgAAgAHAAwAAAAQAAgAAgAHAA8AAAAOAAgAAgAHAAwAAAANAAgAAgAGAAcAAAADAAIAAAAIABUAAAABAAkAAAASABAAAAARAAQAAgAAACgAABARAAUAAgABACkAABARAAYAAgABACoAABAQAAQAAgABACgAABAQAAUAAgACACkAABAQAAYAAgACACoAABA=")
 tile_set = ExtResource("2_yofxd")
 
 [node name="NWPlantSplatArea" type="Node2D" parent="Furniture"]
@@ -431,50 +440,79 @@ script = ExtResource("7_kk3oa")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ycvno")
 
-[node name="ReceptionDeskTopSplatArea" type="Node2D" parent="Furniture"]
-position = Vector2(288, 65)
-script = ExtResource("7_kk3oa")
-
-[node name="Area2D" type="Area2D" parent="Furniture/ReceptionDeskTopSplatArea"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/ReceptionDeskTopSplatArea/Area2D"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_rcokh")
-
-[node name="ReceptionDeskMiddleSplatArea" type="Node2D" parent="Furniture"]
-position = Vector2(280, 80)
-script = ExtResource("7_kk3oa")
-
-[node name="Area2D" type="Area2D" parent="Furniture/ReceptionDeskMiddleSplatArea"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/ReceptionDeskMiddleSplatArea/Area2D"]
-position = Vector2(0, 5.5)
-shape = SubResource("RectangleShape2D_vtyit")
-
-[node name="ReceptionDeskBottomSplatArea" type="Node2D" parent="Furniture"]
-position = Vector2(288, 96)
-script = ExtResource("7_kk3oa")
-
-[node name="Area2D" type="Area2D" parent="Furniture/ReceptionDeskBottomSplatArea"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/ReceptionDeskBottomSplatArea/Area2D"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_eupax")
-
 [node name="Chairs" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAASAAUAAgAMACsAAAA=")
+tile_map_data = PackedByteArray("AAARAAUAAgAMACsAAAA=")
 tile_set = ExtResource("2_yofxd")
 
+[node name="ReceptionDeskChairSplatArea" type="Node2D" parent="Chairs"]
+position = Vector2(281, 83)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Chairs/ReceptionDeskChairSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chairs/ReceptionDeskChairSplatArea/Area2D"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_5eu41")
+
 [node name="Decorations" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAKAAAAAQAKACsAAAAKAAEAAQAKACwAAAALAAAAAQALACsAAAALAAEAAQALACwAAAAPAAAAAQAKACsAAAAPAAEAAQAKACwAAAAQAAAAAQALACsAAAAQAAEAAQALACwAAAAEAAAAAQAEAA0AAAAEAAEAAQAEAA4AAAAFAAAAAQAFAA0AAAAFAAEAAQAFAA4AAAAEAAUAAQAAACwAAAAFAAUAAQABACwAAAAGAAUAAQABACwAAAAHAAUAAQABACwAAAAIAAUAAQACACwAAAARAAUAAgALAC0AAAARAAYAAgALAC4AAAASAAYAAgAIACUAAAARAAQAAgALACwAAAASAAUAAgAIACQAAAA=")
+tile_map_data = PackedByteArray("AAAKAAAAAQAKACsAAAAKAAEAAQAKACwAAAALAAAAAQALACsAAAALAAEAAQALACwAAAAPAAAAAQAKACsAAAAPAAEAAQAKACwAAAAQAAAAAQALACsAAAAQAAEAAQALACwAAAAEAAAAAQAEAA0AAAAEAAEAAQAEAA4AAAAFAAAAAQAFAA0AAAAFAAEAAQAFAA4AAAAEAAUAAQAAACwAAAAFAAUAAQABACwAAAAGAAUAAQABACwAAAAHAAUAAQABACwAAAAIAAUAAQACACwAAAARAAYAAgALAC4AAAA=")
 tile_set = ExtResource("2_yofxd")
 
 [node name="Desktops" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAARAAUAAgALAC0AAAARAAYAAgALAC4AAAASAAYAAgAIACUAAAARAAQAAgALACwAAAASAAUAAgAIACQAAAA=")
+tile_map_data = PackedByteArray("AAAQAAQAAgALACwAAAAQAAUAAgALAC0AAAAQAAYAAgALAC4AAAARAAUAAgAIACQAAAARAAYAAgAIACUAAAA=")
 tile_set = ExtResource("2_yofxd")
+
+[node name="ReceptionDeskMonitorTopSplatArea" type="Node2D" parent="Desktops"]
+position = Vector2(264, 72)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Desktops/ReceptionDeskMonitorTopSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktops/ReceptionDeskMonitorTopSplatArea/Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_y02kw")
+
+[node name="ReceptionDeskMonitorMiddleSplatArea" type="Node2D" parent="Desktops"]
+position = Vector2(264, 88)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Desktops/ReceptionDeskMonitorMiddleSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktops/ReceptionDeskMonitorMiddleSplatArea/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_6pgqc")
+
+[node name="ReceptionDeskMonitorBottomSplatArea" type="Node2D" parent="Desktops"]
+position = Vector2(264, 104)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Desktops/ReceptionDeskMonitorBottomSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktops/ReceptionDeskMonitorBottomSplatArea/Area2D"]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_a4xc4")
+
+[node name="ReceptionDeskPhoneSplatArea" type="Node2D" parent="Desktops"]
+position = Vector2(280, 104)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Desktops/ReceptionDeskPhoneSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktops/ReceptionDeskPhoneSplatArea/Area2D"]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_uwbcn")
+
+[node name="ReceptionDeskEmptyTopSplatArea" type="Node2D" parent="Desktops"]
+position = Vector2(280, 72)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Desktops/ReceptionDeskEmptyTopSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktops/ReceptionDeskEmptyTopSplatArea/Area2D"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_vvay6")
 
 [node name="SplatSprite" type="Sprite2D" parent="."]
 visible = false
