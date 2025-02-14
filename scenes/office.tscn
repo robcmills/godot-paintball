@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://cepra2yx05tcy"]
+[gd_scene load_steps=41 format=4 uid="uid://cepra2yx05tcy"]
 
 [ext_resource type="Texture2D" uid="uid://bovffa8txdl84" path="res://assets/Office_walls_floors_16x16.png" id="1_1we10"]
 [ext_resource type="Script" path="res://scripts/office.gd" id="1_8ovyv"]
@@ -296,8 +296,23 @@ size = Vector2(10, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycvno"]
 size = Vector2(26, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1twd7"]
+size = Vector2(10, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4yx2"]
+size = Vector2(90, 22)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5eu41"]
 size = Vector2(10, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6vv"]
+size = Vector2(15, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66uhb"]
+size = Vector2(16, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x74r"]
+size = Vector2(304, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y02kw"]
 size = Vector2(15, 15)
@@ -440,6 +455,25 @@ script = ExtResource("7_kk3oa")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ycvno")
 
+[node name="SEPlantSplatArea" type="Node2D" parent="Furniture"]
+position = Vector2(216, 149)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Furniture/SEPlantSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/SEPlantSplatArea/Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_1twd7")
+
+[node name="SEShelvesSplatArea" type="Node2D" parent="Furniture"]
+position = Vector2(272, 145)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Furniture/SEShelvesSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/SEShelvesSplatArea/Area2D"]
+shape = SubResource("RectangleShape2D_t4yx2")
+
 [node name="Chairs" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAARAAUAAgAMACsAAAA=")
@@ -456,8 +490,38 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_5eu41")
 
 [node name="Decorations" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAKAAAAAQAKACsAAAAKAAEAAQAKACwAAAALAAAAAQALACsAAAALAAEAAQALACwAAAAPAAAAAQAKACsAAAAPAAEAAQAKACwAAAAQAAAAAQALACsAAAAQAAEAAQALACwAAAAEAAAAAQAEAA0AAAAEAAEAAQAEAA4AAAAFAAAAAQAFAA0AAAAFAAEAAQAFAA4AAAAEAAUAAQAAACwAAAAFAAUAAQABACwAAAAGAAUAAQABACwAAAAHAAUAAQABACwAAAAIAAUAAQACACwAAAARAAYAAgALAC4AAAA=")
 tile_set = ExtResource("2_yofxd")
+
+[node name="LeftWallSplatArea" type="Node2D" parent="Decorations"]
+position = Vector2(10, 88)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Decorations/LeftWallSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/LeftWallSplatArea/Area2D"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_4b6vv")
+
+[node name="RightWallSplatArea" type="Node2D" parent="Decorations"]
+position = Vector2(328, 88)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Decorations/RightWallSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/RightWallSplatArea/Area2D"]
+shape = SubResource("RectangleShape2D_66uhb")
+
+[node name="TopWallSplatArea" type="Node2D" parent="Decorations"]
+position = Vector2(160, 25)
+script = ExtResource("7_kk3oa")
+
+[node name="Area2D" type="Area2D" parent="Decorations/TopWallSplatArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/TopWallSplatArea/Area2D"]
+position = Vector2(8, -7.5)
+shape = SubResource("RectangleShape2D_0x74r")
 
 [node name="Desktops" type="TileMapLayer" parent="."]
 y_sort_enabled = true
